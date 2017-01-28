@@ -1,0 +1,31 @@
+{
+  "name": "ark-node-tools",
+  "version": "0.0.1",
+  "description": "Simple tools to help with hosting a dedicated Linux ARK server.",
+  "main": "ark-discord.js",
+  "dependencies": {
+    "gamedig": "^0.2.25",
+    "minimist": "^1.2.0",
+    "node-watch": "^0.4.1",
+    "request": "^2.79.0",
+    "tail": "^1.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryandoll/ark-node-tools.git"
+  },
+  "keywords": [
+    "ark",
+    "node"
+  ],
+  "author": "Ryan Doll",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryandoll/ark-node-tools/issues"
+  },
+  "homepage": "https://github.com/ryandoll/ark-node-tools#readme"
+}
