@@ -64,20 +64,20 @@ function processLogEntry(line){
 }
 
 // Need to host different images.  For now, just keeping these in.
-var defaultImage = 'http://vignette2.wikia.nocookie.net/ark-survival-evolved/images/1/1e/ARK_LOGO_BLACK.png/revision/latest';
+var defaultImage = 'http://rhino.game-server.cc/ark/images/ark-logo.jpg';
 var dinoImage = 'http://www.dododex.com/media/creature/$$$.png';
 var messageTypes = {
   death : {
     enabled : true,
     condition : 'was killed by',
     title : 'Kill shot!',
-    icon : 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Skull_and_crossbones.svg/510px-Skull_and_crossbones.svg.png'
+    icon : 'http://rhino.game-server.cc/ark/images/skull.png'
   },
   suicide : {
     enabled : true,
     condition : 'was killed!',
     title : 'Well, that didn\'t work out...',
-    icon : 'https://upload.wikimedia.org/wikipedia/commons/d/dc/Charles_Darwin_photograph_by_Julia_Margaret_Cameron,_1968.jpg'
+    icon : 'http://rhino.game-server.cc/ark/images/darwin.jpg'
   },
   tame : {
     enabled : true,
