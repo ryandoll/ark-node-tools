@@ -65,7 +65,8 @@ function processLogEntry(line){
 
 // Need to host different images.  For now, just keeping these in.
 var defaultImage = 'http://rhino.game-server.cc/ark/images/ark-logo.jpg';
-var dinoImage = 'http://www.dododex.com/media/creature/$$$.png';
+//var dinoImage = 'http://rhino.game-server.cc/ark/images/dinos/$$$.png'; // I will update this later.
+var dinoImage = defaultImage;
 var messageTypes = {
   death : {
     enabled : true,
