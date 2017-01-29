@@ -86,6 +86,8 @@ var messageTypes = {
       var dinoArray = message.split('(');
       var dino = dinoArray[dinoArray.length - 1].split(')')[0];
       this.icon = dinoImage.replace('$$$', dino).toLowerCase();
+      message += '\n http://ark.gamepedia.com/' + dino;
+      return message;
     }
   },
   reboot : {
@@ -131,7 +133,7 @@ function postToDiscord(messageObj, message){
     title += ': ' +  messageObj.title;
   }
   if(messageObj.process){
-    messageObj.process(message);
+    message = messageObj.process(message);
   }
   var body = {
       'username': title,
