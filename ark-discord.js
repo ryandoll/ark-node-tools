@@ -1,11 +1,9 @@
-var fs = require('fs'); // file system module
+var fs = require('fs');
 var watch = require('node-watch');
 var request = require('request');
-var parseArgs = require('minimist')(process.argv, { 'string': 'webhook-id'}); // Eventh though webhook-id comes in as a NUMBER, convert to a string.
+var parseArgs = require('minimist')(process.argv, { 'string': 'webhook-id'}); // Even though webhook-id comes in as a NUMBER, convert to a string.
 var logDir;
-var webhookId;
-var webhookToken;
-var webHookUrl = 'https://discordapp.com/api/webhooks/{{webhook-id}}/{{webhook-token}}' ;
+var webHookUrl = 'https://discordapp.com/api/webhooks/{{webhook-id}}/{{webhook-token}}';
 var missingParameters = false;
 
 if(parseArgs['webhook-id']){
@@ -63,7 +61,6 @@ function processLogEntry(line){
   analyzeLine(message);
 }
 
-// Need to host different images.  For now, just keeping these in.
 var defaultImage = 'http://rhino.game-server.cc/ark/images/ark-logo.jpg';
 //var dinoImage = 'http://rhino.game-server.cc/ark/images/dinos/$$$.png'; // I will update this later.
 var dinoImage = defaultImage;
@@ -85,7 +82,7 @@ var messageTypes = {
     condition : 'Tamed a',
     title : 'Dino Whisperer',
     icon : defaultImage,
-    process : function(message){
+    process : function(message){ // Example of writing a custom rule for a specific condition.
       var dinoArray = message.split('(');
       var dino = dinoArray[dinoArray.length - 1].split(')')[0];
       this.icon = dinoImage.replace('$$$', dino).toLowerCase();
@@ -144,8 +141,6 @@ function postToDiscord(messageObj, message){
       'file': null,
       'embeds': []
   };
-
-  // was killed by
   request.post(webHookUrl, {form:body}, function (error, response, body) {
     if(error){
       console.log(error);
