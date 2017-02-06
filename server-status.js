@@ -11,7 +11,6 @@ var server = app.listen(3000, function () {
 });
 
 app.get('/ark-status', function(req, res) {
-
   Gamedig.query(
       {
           type: 'arkse',
@@ -26,7 +25,26 @@ app.get('/ark-status', function(req, res) {
           } else {
             message = state;
           }
+          res.send(message);
+      }
+  );
+});
 
+app.get('/minecraft-status', function(req, res) {
+  Gamedig.query(
+      {
+          type: 'minecraftping',
+          host: 'rhino.game-server.cc'
+      },
+      function(state) {
+          var message;
+          if(state.error){
+            message = {
+              'error' : 'Server is offline.'
+            }
+          } else {
+            message = state;
+          }
           res.send(message);
       }
   );
